@@ -3,7 +3,8 @@
 	"version": "0.0.0",
 	"private": true,
 	"scripts": {
-		"start": "pm2 start ./bin/www",
+		"start": "node ./bin/www",
+		"startDev": "nodemon ./bin/www",
 		"lint": "eslint routes"
 	},
 	"devDependencies": {
@@ -31,7 +32,6 @@
 		"ejs": "~2.5.6",
 		"express": "^4.16.1",
 		"morgan": "~1.8.1",
-		"pm2": "^2.7.1",
 		"react": "^16.0.0",
 		"react-dom": "^16.0.0",
 		"serve-favicon": "~2.4.2"

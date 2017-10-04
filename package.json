@@ -2,10 +2,12 @@
 	"name": "alkemi",
 	"version": "0.0.0",
 	"engines": {
-		"node": "8.5.0"
+		"node": "8.5.0",
+		"npm": "5.3.0"
 	},
 	"private": true,
 	"scripts": {
+		"install": "NODE_ENV=test npm i",
 		"postinstall": "npm run build",
 		"start": "node ./bin/www",
 		"start:dev": "nodemon ./bin/www",

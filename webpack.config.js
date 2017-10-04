@@ -9,19 +9,39 @@ module.exports = {
 		loaders: [
 			{
 				test: /\.(js|jsx)$/,
-				loader: 'babel-loader',
-				exclude: /node_modules/
-			},
-			{
-				test: /\.sass$/,
-				use: ExtractTextPlugin.extract({
-					fallback: "style-loader",
-					use: "css-loader?modules=true"
-				})
+				exclude: /node_modules/,
+				loader: [
+					'babel-loader',
+					'eslint-loader',
+				],
 			},
 			{
 				test: /\.css$/,
-				loader: ['style-loader', 'css-loader']
+				use: ExtractTextPlugin.extract({
+					fallback: "style-loader",
+					use: "css-loader?modules=true&localIdentName=[name]__[local]"
+				})
+			},
+			{
+				test: /\.(scss)$/,
+				use: ExtractTextPlugin.extract({
+					fallback: "style-loader",
+					use: [{
+						loader: 'css-loader', // translates CSS into CommonJS modules
+					}, {
+						loader: 'postcss-loader', // Run post css actions
+						options: {
+							plugins: function () { // post css plugins, can be exported to postcss.config.js
+								return [
+									require('precss'),
+									require('autoprefixer')
+								];
+							}
+						}
+					}, {
+						loader: 'sass-loader' // compiles SASS to CSS
+					}]
+				})
 			},
 		]
 	},
@@ -33,5 +53,9 @@ module.exports = {
 	},
 	plugins: [
 		new ExtractTextPlugin("css/[name].min.css"),
-	]
+	],
+	resolve: {
+		extensions: [".js", ".jsx"],
+		modules: ["node_modules"]
+	}
 }

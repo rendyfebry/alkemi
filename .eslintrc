@@ -15,9 +15,17 @@
 			"tab"
 		],
 		"semi": [
-			1,
+			2,
 			"never"
 		],
-		"no-tabs": 0
+		"no-tabs": 0,
+		"react/jsx-indent": [
+			2,
+			"tab"
+		],
+		"react/jsx-indent-props": [
+			2,
+			"tab"
+		]
 	}
 }

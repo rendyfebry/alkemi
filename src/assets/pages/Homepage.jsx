@@ -1,18 +1,27 @@
-import React, { Component } from 'react'
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-import 'bootstrap/dist/css/bootstrap.css'
+import {
+	Container,
+	Row,
+	Col,
+} from 'reactstrap'
 
-import styles from './Homepage.sass'
+import '../components/global.scss'
+import styles from './Homepage.css'
+import MainNavbar from '../components/MainNavbar'
 
+const Homepage = () => (
+	<div className={styles.wrapper}>
+		<MainNavbar />
+		<Container>
+			<Row>
+				<Col>
+					Home Page
+				</Col>
+			</Row>
+		</Container>
+	</div>
+)
 
-class Homepage extends Component {
-	render() {
-		return (
-			<div className={styles.wrapper}>
-				Home
-			</div>
-		)
-	}
-}
-
-export default Homepage
+ReactDOM.render(<Homepage />, document.getElementById('app'))

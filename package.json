@@ -7,7 +7,7 @@
 	},
 	"private": true,
 	"scripts": {
-		"install": "NODE_ENV=test npm i",
+		"heroku-prebuild": "NODE_ENV=test npm install",
 		"postinstall": "npm run build",
 		"start": "node ./bin/www",
 		"start:dev": "nodemon ./bin/www",

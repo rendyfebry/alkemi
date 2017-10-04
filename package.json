@@ -3,6 +3,7 @@
 	"version": "0.0.0",
 	"private": true,
 	"scripts": {
+		"postinstall": "then npm run build",
 		"start": "node ./bin/www",
 		"start:dev": "nodemon ./bin/www",
 		"build": "npm run lint && webpack --progress --colors",

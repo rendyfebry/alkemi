@@ -1,0 +1,54 @@
+.wrapper {
+	font-size: 1.4rem;
+	background-color: #d71149 ;
+	padding-top: 1rem ;
+	padding-bottom: 1rem ;
+}
+
+.navbarBrand,
+.navbarBrand:hover {
+	color: #ffffff;
+	font-size: 2rem;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.navItem {
+	margin-right: 2rem;
+}
+
+.navItem:last-child {
+	margin-right: 0;
+}
+
+.navLink {
+	border: 0.2rem solid transparent;
+	color: #ffffff;
+	-webkit-transition: all 100ms 0s ease;
+	-moz-transition: all 100ms 0s ease;
+	transition: all 100ms 0s ease;
+	font-weight: 700;
+}
+
+.navLinkRegister {
+	border-color: #ffffff;
+	border-radius: 0.4rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+}
+
+.navLink:hover,
+.navLink:focus {
+	color: #ffffff;
+}
+
+.navLinkRegister:hover,
+.navLinkRegister:focus {
+	border-color: #d71149;
+	color: #4b5658;
+	background-color: #ffffff;
+}
+
+.navbarToggler {
+	border: 0;
+}

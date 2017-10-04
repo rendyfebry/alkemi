@@ -8,14 +8,14 @@
 	"rules": {
 		"quotes": [
 			2,
-			"double"
+			"single"
 		],
 		"indent": [
 			2,
 			"tab"
 		],
 		"semi": [
-			2,
+			1,
 			"never"
 		],
 		"no-tabs": 0

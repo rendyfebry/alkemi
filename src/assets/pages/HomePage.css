@@ -1,0 +1,39 @@
+
+.hero {
+	height: calc(100vh - 5.5rem);
+	background-color: #d71149;
+	background-image: url("../images/hero.svg");
+	color: #ffffff;
+	min-height: 50rem;
+	position: relative;
+}
+
+.heroRow {
+	height: 100%;
+}
+
+.heroColLeft {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@media (min-width: 992px) {
+	.heroColLeft>div {
+		width: 80%;
+		margin: 0 auto;
+	}
+}
+
+.heroColRight {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.registerForm {
+	background-color: #ffffff;
+	color: #4b5658;
+	padding: 1.5rem 0.5rem;
+	border-radius: 0.3rem;
+}

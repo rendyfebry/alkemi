@@ -1,8 +1,12 @@
 .wrapper {
 	font-size: 1.4rem;
-	background-color: #d71149 ;
+	background-color: #d71149;
 	padding-top: 1rem ;
 	padding-bottom: 1rem ;
+}
+
+.wrapperInverse {
+	background-color: #ffffff;
 }
 
 .navbarBrand,
@@ -11,6 +15,11 @@
 	font-size: 2rem;
 	padding-top: 0;
 	padding-bottom: 0;
+}
+
+.wrapperInverse .navbarBrand,
+.wrapperInverse .navbarBrand:hover {
+	color: #d71149;
 }
 
 .navItem {
@@ -23,11 +32,15 @@
 
 .navLink {
 	border: 0.2rem solid transparent;
-	color: #ffffff;
+	color: #ffffff!important;
 	-webkit-transition: all 100ms 0s ease;
 	-moz-transition: all 100ms 0s ease;
 	transition: all 100ms 0s ease;
 	font-weight: 700;
+}
+
+.wrapperInverse .navLink {
+	color: #4b5658!important;
 }
 
 .navLinkRegister {
@@ -35,6 +48,12 @@
 	border-radius: 0.4rem;
 	padding-left: 1.5rem;
 	padding-right: 1.5rem;
+	font-weight: 700;
+}
+
+.wrapperInverse .navLinkRegister {
+	border-color: #d71149 !important;
+	color: #d71149 !important;
 }
 
 .navLink:hover,

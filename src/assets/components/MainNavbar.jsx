@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import {
 	Collapse,
 	Navbar,
@@ -11,7 +12,15 @@ import {
 
 import styles from './MainNavbar.css'
 
-export default class MainNavbar extends React.Component {
+const propTypes = {
+	inverse: PropTypes.bool,
+}
+
+const defaultProps = {
+	inverse: false,
+}
+
+class MainNavbar extends React.Component {
 	constructor(props) {
 		super(props)
 
@@ -27,27 +36,43 @@ export default class MainNavbar extends React.Component {
 		})
 	}
 
+	get wrapperClassName() {
+		const inverse = this.props.inverse
+		const className = inverse ? `${styles.wrapper} ${styles.wrapperInverse}` : styles.wrapper
+		return className
+	}
+
+	get navItemClassName() {
+		const className = styles.navItem
+		return className
+	}
+
+	get navLinkClassName() {
+		const className = styles.navLink
+		return className
+	}
+
 	render() {
 		return (
-			<Navbar dark fixed="top" expand="md" className={styles.wrapper}>
+			<Navbar dark fixed="top" expand="md" className={this.wrapperClassName}>
 				<NavbarBrand href="/" className={styles.navbarBrand}>
 					Alkemi
 				</NavbarBrand>
 				<NavbarToggler onClick={this.toggle} className={styles.navbarToggler} />
 				<Collapse isOpen={this.state.isOpen} navbar>
 					<Nav className="ml-auto" navbar>
-						<NavItem className={styles.navItem}>
-							<NavLink href="/about" className={styles.navLink}>
-								About
+						<NavItem className={this.navItemClassName}>
+							<NavLink href="/library" className={this.navLinkClassName}>
+								Library
 							</NavLink>
 						</NavItem>
-						<NavItem className={styles.navItem}>
-							<NavLink href="/login" className={styles.navLink}>
+						<NavItem className={this.navItemClassName}>
+							<NavLink href="/login" className={this.navLinkClassName}>
 								Login
 							</NavLink>
 						</NavItem>
-						<NavItem className={styles.navItem}>
-							<NavLink href="/register" className={styles.navLinkRegister}>
+						<NavItem className={this.navItemClassName}>
+							<NavLink href="/register" className={`${this.navLinkClassName} ${styles.navLinkRegister}`}>
 								Register
 							</NavLink>
 						</NavItem>
@@ -57,3 +82,8 @@ export default class MainNavbar extends React.Component {
 		)
 	}
 }
+
+MainNavbar.propTypes = propTypes
+MainNavbar.defaultProps = defaultProps
+
+export default MainNavbar

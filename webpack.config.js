@@ -2,8 +2,10 @@ const path = require('path')
 const ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 module.exports = {
+	devtool: 'eval',
 	entry: {
-		"home-page": "./src/assets/pages/Homepage.jsx",
+		"home-page": "./src/assets/pages/HomePage.jsx",
+		"library-page": "./src/assets/pages/LibraryPage.jsx",
 	},
 	module: {
 		loaders: [
@@ -11,8 +13,7 @@ module.exports = {
 				test: /\.(js|jsx)$/,
 				exclude: /node_modules/,
 				loader: [
-					'babel-loader',
-					'eslint-loader',
+					'babel-loader'
 				],
 			},
 			{
@@ -43,6 +44,19 @@ module.exports = {
 					}]
 				})
 			},
+			{
+				test: /\.(png|jpg|gif|svg)$/,
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							name: '[name].[ext]',
+							publicPath: '../',
+							outputPath: 'images/'
+						}
+					}
+				]
+			}
 		]
 	},
 	output: {

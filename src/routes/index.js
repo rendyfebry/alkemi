@@ -4,7 +4,10 @@ const router = express.Router()
 
 /* GET home page. */
 router.get('/', (req, res) => {
-	res.render('index', { title: 'Alkemi' })
+	const data = {
+		title: 'Alkemi - Learn To Code By Yourself',
+	}
+	res.render('index', data)
 })
 
 module.exports = router

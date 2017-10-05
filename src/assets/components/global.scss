@@ -1,1 +1,19 @@
 @import "~bootstrap/scss/bootstrap";
+
+html {
+	font-size: 10px;
+}
+
+body {
+	font-size: 1.4rem;
+	padding-top: 5.5rem;
+	color: #4b5658;
+}
+
+.form-control {
+	font-size: 1.4rem;
+}
+
+label {
+	font-weight: bold;
+}
